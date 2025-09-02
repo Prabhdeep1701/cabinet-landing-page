@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neutral Student Cabinet Design System
+Clean white, black, and beige palette with subtle animations.
+*/
+
+@layer base {
+  :root {
+    /* Neutral Brand Colors */
+    --neutral-black: 0 0% 0%; /* #000000 */
+    --neutral-white: 0 0% 100%; /* #FFFFFF */
+    --neutral-beige: 45 29% 84%; /* #E5D5B8 */
+
+    /* Back-compat for existing variables (mapped to neutral palette) */
+    --primary-red: var(--neutral-black);
+    --secondary-beige: var(--neutral-beige);
+    --accent-violet: var(--neutral-beige);
+
+    /* Base Colors */
+    --background: var(--neutral-white);
+    --foreground: 0 0% 10%;
+
+    --card: var(--neutral-white);
+    --card-foreground: 0 0% 10%;
+
+    --popover: var(--neutral-white);
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary - Black */
+    --primary: var(--neutral-black);
+    --primary-foreground: var(--neutral-white);
+    --primary-hover: 0 0% 15%;
+
+    /* Secondary - Beige */
+    --secondary: var(--neutral-beige);
+    --secondary-foreground: 0 0% 10%;
+    --secondary-hover: 45 29% 78%;
+
+    /* Accent - Light neutrals */
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 0% 20%;
+    --destructive-foreground: var(--neutral-white);
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--neutral-black);
+
+    --radius: 16px;
+
+    /* Neutral Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 0.92) 0%, hsl(45 29% 84% / 0.85) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 0% / 0.06) 0%, hsl(45 29% 84% / 0.08) 100%);
+
+    /* Neutral Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.08), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-card-hover: 0 20px 25px -5px hsl(0 0% 0% / 0.12), 0 10px 10px -5px hsl(0 0% 0% / 0.08);
+    --shadow-hero: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  }
+}
+
+@layer components {
+  /* Hero Section with 3D Effects */
+  .hero-gradient {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+  
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, hsl(0 0% 0% / 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, hsl(45 29% 84% / 0.18) 0%, transparent 50%);
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
+  /* 3D Card Components */
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    transform-style: preserve-3d;
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+  }
+
+  /* 3D Button Variants */
+  .btn-hero {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-hero);
+    transition: var(--transition-bounce);
+    transform-style: preserve-3d;
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-3px) scale(1.05) rotateX(10deg);
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-secondary {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-hover)) 100%);
+    color: hsl(var(--secondary-foreground));
+    border: 2px solid transparent;
+    transition: var(--transition-smooth);
+    transform-style: preserve-3d;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
+    transition: var(--transition-smooth);
+    transform-style: preserve-3d;
+  }
+  
+  .btn-outline:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-2px) rotateZ(2deg);
+  }
+
+  /* 3D Member Cards */
+  .member-card {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  .member-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-12px) scale(1.05) rotateX(10deg) rotateY(5deg);
+  }
+  
+  .member-card .member-overlay {
+    background: linear-gradient(180deg, transparent 0%, hsl(0 0% 0% / 0.75) 100%);
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+  
+  .member-card:hover .member-overlay {
+    opacity: 1;
+  }
+
+  /* Enhanced Section Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+
+  /* 3D Text Effects */
+  .text-3d {
+    text-shadow: 2px 2px 4px hsl(0 0% 0% / 0.25);
+    transform: perspective(500px) rotateX(15deg);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+}
+
+/* Enhanced 3D Keyframe Animations */
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  33% {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  }
+  66% {
+    transform: translateY(8px) rotateX(-3deg) rotateY(-3deg);
+  }
+}
+
+@keyframes bounce-3d {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1) rotateZ(5deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+/* Loading Screen Animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 3D Utility Classes */
+.animate-float-3d {
+  animation: float-3d 4s ease-in-out infinite;
+}
+
+.animate-bounce-3d {
+  animation: bounce-3d 2s ease-in-out infinite;
+}
