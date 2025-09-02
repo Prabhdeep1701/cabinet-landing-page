@@ -7,7 +7,7 @@ const CabinetSection = () => {
     {
       name: "Aashi Shukla",
       role: "President",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b605?w=300&h=300&fit=crop&crop=face",
+      image: "/aashi-shukla.png",
       bio: "Leading the student body with passion and dedication to create positive change.",
       linkedin: "#",
       email: "aashi.shukla@bennett.edu.in",
@@ -16,7 +16,7 @@ const CabinetSection = () => {
     {
       name: "Namit Joshi", 
       role: "Vice President",
-      image: " ",
+      image: "/namit-joshi.png",
       bio: "Supporting presidential initiatives and driving student engagement programs.",
       linkedin: "#",
       email: "namit.joshi@bennett.edu.in",
@@ -25,7 +25,7 @@ const CabinetSection = () => {
     {
       name: "Sumukh Chhabra",
       role: "General Secretary",
-      image: " ",
+      image: "/sumukh-chhabra.png",
       bio: "Managing cabinet operations and coordinating student activities.",
       linkedin: "#",
       email: "sumukh.chhabra@bennett.edu.in",
@@ -34,7 +34,7 @@ const CabinetSection = () => {
     {
       name: "Manas Khandelwal",
       role: "Advisor",
-      image: " ",
+      image: "/manas-khandelwal.png",
       bio: "Providing strategic guidance and mentorship to the cabinet team.",
       linkedin: "#",
       email: "manas.khandelwal@bennett.edu.in",
