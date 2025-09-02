@@ -9,7 +9,7 @@ const CabinetSection = () => {
       role: "President",
       image: "/aashi-shukla.png",
       bio: "Leading the student body with passion and dedication to create positive change.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/aashishukla/",
       email: "aashi.shukla@bennett.edu.in",
       instagram: "#"
     },
@@ -18,7 +18,7 @@ const CabinetSection = () => {
       role: "Vice President",
       image: "/namit-joshi.png",
       bio: "Supporting presidential initiatives and driving student engagement programs.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/namit-joshi-b39487270/",
       email: "namit.joshi@bennett.edu.in",
       instagram: "#"
     },
@@ -27,7 +27,7 @@ const CabinetSection = () => {
       role: "General Secretary",
       image: "/sumukh-chhabra.png",
       bio: "Managing cabinet operations and coordinating student activities.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/sumukh-chhabra-23829428a/",
       email: "sumukh.chhabra@bennett.edu.in",
       instagram: "#"
     },
@@ -36,7 +36,7 @@ const CabinetSection = () => {
       role: "Advisor",
       image: "/manas-khandelwal.png",
       bio: "Providing strategic guidance and mentorship to the cabinet team.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/manaskhandelwaldev/",
       email: "manas.khandelwal@bennett.edu.in",
       instagram: "#"
     },
