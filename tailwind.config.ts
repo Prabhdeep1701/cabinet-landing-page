@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				sans: ['Lato', 'ui-sans-serif', 'system-ui'],
 				heading: ['Montserrat', 'ui-sans-serif'],
+				script: ['Dancing Script', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

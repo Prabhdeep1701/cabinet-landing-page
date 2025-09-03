@@ -27,7 +27,7 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
           setTimeout(() => {
             setPhase('done');
             onLoadingComplete();
-          }, 450); // logo display duration
+          }, 250); // logo display duration
         }, 150); // small gap before logo
       }
     }, speed);
@@ -54,7 +54,7 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
       <img
         src={logoSrc}
         alt="Cabinet Logo"
-        className="w-32 h-32 md:w-40 md:h-40 animate-[logoPunch_450ms_cubic-bezier(.2,.8,.2,1)_forwards]"
+        className="w-60 h-60 md:w-80 md:h-80 object-contain animate-[logoPunch_450ms_cubic-bezier(.2,.8,.2,1)_forwards]"
       />
       <style>
         {`@keyframes logoPunch { 0% { transform: scale(0.65); } 55% { transform: scale(1.25); } 75% { transform: scale(0.95); } 100% { transform: scale(1); } }`}
